@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 import { FaTwitter } from "react-icons/fa";
@@ -6,26 +5,33 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+
 import Container from "../Container";
 import Flex from "../Flex";
 import Images from "../Images";
-import footerLogo from '/src/assets/footerLogo.png'
+
+import footerLogo from "/src/assets/footerLogo.png";
 
 const Footer = () => {
   return (
-    <div className="pt-16 pb-6 bg-black">
+    <div className="pt-12 lg:pt-16 pb-6 bg-black">
       <Container>
-        <Flex className={"items-start justify-between"}>
-          <div className="">
-            <Link to={"/"}>
-              <Images srcImg={footerLogo} />
+        {/* Top Footer */}
+        <Flex className="flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-center md:items-start justify-center lg:justify-between gap-10 lg:gap-0">
+          {/* Logo */}
+          <div className="text-center lg:text-left">
+            <Link to="/">
+              <Images srcImg={footerLogo} className="mx-auto lg:mx-0" />
             </Link>
           </div>
-          <div className="">
+
+          {/* Join Us */}
+          <div className="text-center md:text-left">
             <h4 className="text-[20px] text-white font-poppins mt-4">
               Join Us
             </h4>
-            <ul className="text-sm text-[#939292] font-poppins mt-8">
+
+            <ul className="text-sm text-[#939292] font-poppins mt-6 lg:mt-8">
               <li className="pb-4">
                 <Link>Careers</Link>
               </li>
@@ -40,9 +46,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="">
+
+          {/* About */}
+          <div className="text-center md:text-left">
             <h4 className="text-[20px] text-white font-poppins mt-4">About</h4>
-            <ul className="text-sm text-[#939292] font-poppins mt-8">
+
+            <ul className="text-sm text-[#939292] font-poppins mt-6 lg:mt-8">
               <li className="pb-4">
                 <Link>Community</Link>
               </li>
@@ -63,11 +72,14 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="">
+
+          {/* Programs */}
+          <div className="text-center md:text-left">
             <h4 className="text-[20px] text-white font-poppins mt-4">
               Programs
             </h4>
-            <ul className="text-sm text-[#939292] font-poppins mt-8">
+
+            <ul className="text-sm text-[#939292] font-poppins mt-6 lg:mt-8">
               <li className="pb-4">
                 <Link>Advertise</Link>
               </li>
@@ -88,43 +100,50 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="">
-            {/* <h4 className="text-[20px] text-white font-poppins mt-4">
-              Join Us
-            </h4> */}
+
+          {/* Contact & Social */}
+          <div className="text-center md:text-left">
             <ul className="text-sm text-[#939292] font-poppins mt-6">
               <li className="pb-5">
                 <Link>Find Location</Link>
               </li>
               <li className="pb-5">
-                <Link>Get help</Link>
+                <Link>Get Help</Link>
               </li>
-              <li className="">
+              <li>
                 <Link>Sitemap</Link>
               </li>
             </ul>
-            <div className="flex gap-x-3 mt-6">
+
+            <div className="flex justify-center md:justify-start flex-wrap gap-3 mt-6">
               <Link>
-                <FaTwitter className="bg-amber-50 text-4xl rounded-[50%] text-black p-2" />
+                <FaTwitter className="bg-white text-4xl rounded-full text-black p-2" />
               </Link>
+
               <Link>
-                <FaFacebook className="bg-amber-50 text-4xl rounded-[50%] text-black p-2" />
+                <FaFacebook className="bg-white text-4xl rounded-full text-black p-2" />
               </Link>
+
               <Link>
-                <FaLinkedinIn className="bg-amber-50 text-4xl rounded-[50%] text-black p-2" />
+                <FaLinkedinIn className="bg-white text-4xl rounded-full text-black p-2" />
               </Link>
+
               <Link>
-                <FaYoutube className="bg-amber-50 text-4xl rounded-[50%] text-black p-2" />
+                <FaYoutube className="bg-white text-4xl rounded-full text-black p-2" />
               </Link>
+
               <Link>
-                <FaInstagram className="bg-amber-50 text-4xl rounded-[50%] text-black p-2" />
+                <FaInstagram className="bg-white text-4xl rounded-full text-black p-2" />
               </Link>
             </div>
           </div>
         </Flex>
-        <Flex className={"justify-between mt-[200px]"}>
-          <h4 className="text-white">2024 Lime</h4>
-          <ul className="flex gap-x-5 text-white underline">
+
+        {/* Bottom Footer */}
+        <Flex className="flex-col lg:flex-row items-center justify-center lg:justify-between mt-16 lg:mt-[200px] gap-6">
+          <h4 className="text-white text-center">© 2024 Lime</h4>
+
+          <ul className="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-x-5 text-white underline text-sm text-center">
             <li>User Agreement</li>
             <li>Privacy Notice</li>
             <li>Data Request</li>
