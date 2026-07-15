@@ -8,62 +8,98 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import Images from "../Images";
 
-
 const Whylime = () => {
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // LG Same
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autopalySpeed: 1500,
+    autoplaySpeed: 1500,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
-    <Container className={"mt-15 mb-20"}>
-      <div className="text-center">
-        <h4 className="text-[#00B200] text-[20px] font-poppins">Why Lime</h4>
-        <h3 className="text-black text-[40px] font-poppins">
+    <Container className="mt-12 md:mt-14 lg:mt-15 mb-14 md:mb-16 lg:mb-20">
+      <div className="text-center px-4">
+        <h4 className="text-[#00B200] text-lg md:text-xl lg:text-[20px] font-poppins">
+          Why Lime
+        </h4>
+
+        <h3 className="text-black text-3xl md:text-4xl lg:text-[40px] font-poppins mt-2">
           Our Core Principles
         </h3>
       </div>
-      <div className="-mx-2 mt-10">
+
+      <div className="-mx-2 mt-8 lg:mt-10">
         <Slider {...settings}>
-          <div className="outline-none w-1/3 px-2">
-            <Images srcImg={whylimeOne} />
-            <div className="relative">
-              <h4 className="text-black text-[20px] font-poppins pt-4">
+          {/* Card 1 */}
+          <div className="outline-none px-2">
+            <Images srcImg={whylimeOne} className="w-full rounded-2xl" />
+
+            <div className="relative mt-4">
+              <h4 className="text-black text-lg lg:text-[20px] font-poppins">
                 Safety
               </h4>
-              <div className="w-[63px] h-[1px] bg-black absolute bottom-1"></div>
+
+              <div className="lg:w-[63px] h-[1px] bg-black mt-1"></div>
             </div>
           </div>
-          <div className="outline-none w-1/3 px-2">
-            <Images srcImg={whylimeTwo} />
-            <div className="relative">
-              <h4 className="text-black text-[20px] font-poppins pt-4">
+
+          {/* Card 2 */}
+          <div className="outline-none px-2">
+            <Images srcImg={whylimeTwo} className="w-full rounded-2xl" />
+
+            <div className="relative mt-4">
+              <h4 className="text-black text-lg lg:text-[20px] font-poppins">
                 Sustainability
               </h4>
-              <div className="w-[134px] h-[1px] bg-black absolute bottom-1"></div>
+
+              <div className="lg:w-[134px] h-[1px] bg-black mt-1"></div>
             </div>
           </div>
-          <div className="outline-none w-1/3 px-2">
-            <Images srcImg={whylimeThree} />
-            <div className="relative">
-              <h4 className="text-black text-[20px] font-poppins pt-4">
+
+          {/* Card 3 */}
+          <div className="outline-none px-2">
+            <Images srcImg={whylimeThree} className="w-full rounded-2xl" />
+
+            <div className="relative mt-4">
+              <h4 className="text-black text-lg lg:text-[20px] font-poppins">
                 Community
               </h4>
-              <div className="w-[118px] h-[1px] bg-black absolute bottom-1"></div>
+
+              <div className="lg:w-[118px] h-[1px] bg-black mt-1"></div>
             </div>
           </div>
-          <div className="outline-none w-1/3 px-2">
-            <Images srcImg={whylimeTwo} />
-            <div className="relative">
-              <h4 className="text-black text-[20px] font-poppins pt-4">
+
+          {/* Card 4 */}
+          <div className="outline-none px-2">
+            <Images srcImg={whylimeTwo} className="w-full rounded-2xl" />
+
+            <div className="relative mt-4">
+              <h4 className="text-black text-lg lg:text-[20px] font-poppins">
                 Sustainability
               </h4>
-              <div className="w-[134px] h-[1px] bg-black absolute bottom-1"></div>
+
+              <div className="lg:w-[134px] h-[1px] bg-black mt-1"></div>
             </div>
           </div>
         </Slider>
