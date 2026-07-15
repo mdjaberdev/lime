@@ -13,7 +13,7 @@ const Download = () => {
       <Container>
         <Flex className="flex-col lg:flex-row items-center justify-center lg:justify-around gap-10 lg:gap-0">
           {/* Mobile Image */}
-          <div className="w-full flex justify-center">
+          <div className="">
             <Link>
               <Images
                 srcImg={downloadOne}

@@ -28,7 +28,7 @@ const Whylime = () => {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 320,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
