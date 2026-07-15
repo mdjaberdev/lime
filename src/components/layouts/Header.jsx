@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import Images from "../Images";
@@ -10,9 +10,35 @@ import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const banner = document.getElementById("banner");
+
+    if (!banner) return;
+
+    const bannerBottom = banner.getBoundingClientRect().bottom;
+
+    setIsScrolled(bannerBottom <= 80);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full pt-4 lg:pt-10 z-50">
+    <div
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-[#1E1E1E] shadow-lg py-4"
+          : "bg-transparent pt-4 lg:pt-10"
+      }`}
+    >
       <Container>
         {/* Top Header */}
         <Flex className="items-center justify-between">
@@ -27,7 +53,7 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Menu (LG Same) */}
+          {/* Desktop Menu */}
           <div className="hidden lg:block ml-80">
             <ul className="flex gap-x-6 text-sm text-white font-poppins">
               <li>
@@ -62,7 +88,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white  text-4xl lg:hidden"
+            className="text-white text-4xl lg:hidden"
           >
             {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
           </button>
@@ -99,9 +125,9 @@ const Header = () => {
               </li>
             </ul>
 
-            <div className="mt-6">
+            <div className=" mt-6">
               <Button
-                className="w-full cursor-pointer"
+                className="text-center mx-auto w-40 cursor-pointer"
                 btnText="Download App"
               />
             </div>
